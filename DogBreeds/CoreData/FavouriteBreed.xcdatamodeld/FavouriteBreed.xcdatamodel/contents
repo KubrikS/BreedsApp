@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Breed" representedClassName=".Breed" syncable="YES">
+        <attribute name="name" attributeType="String" valueTransformerName="" customClassName=".[String:[String]]"/>
+        <relationship name="link" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Link" inverseName="breed" inverseEntity="Link"/>
+    </entity>
+    <entity name="Link" representedClassName=".Link" syncable="YES">
+        <attribute name="isLiked" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="breed" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Breed" inverseName="link" inverseEntity="Breed"/>
+    </entity>
+    <elements>
+        <element name="Breed" positionX="222" positionY="-102.3046875" width="128" height="73"/>
+        <element name="Link" positionX="-63" positionY="-9" width="128" height="88"/>
+    </elements>
+</model>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Breed" representedClassName="Breed" syncable="YES">
+        <attribute name="name" attributeType="String"/>
+        <relationship name="breed" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Breed" inverseName="subBreeds" inverseEntity="Breed"/>
+        <relationship name="photos" toMany="YES" deletionRule="Cascade" destinationEntity="Photo" inverseName="breed" inverseEntity="Photo"/>
+        <relationship name="subBreeds" toMany="YES" deletionRule="Cascade" destinationEntity="Breed" inverseName="breed" inverseEntity="Breed"/>
+    </entity>
+    <entity name="Photo" representedClassName="Photo" syncable="YES">
+        <attribute name="isLiked" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="link" attributeType="String"/>
+        <relationship name="breed" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Breed" inverseName="photos" inverseEntity="Breed"/>
+    </entity>
+    <elements>
+        <element name="Breed" positionX="-18.05859375" positionY="32.1796875" width="128" height="103"/>
+        <element name="Photo" positionX="264.9375" positionY="157.74609375" width="128" height="88"/>
+    </elements>
+</model>
